@@ -1,25 +1,30 @@
-import java.sql.SQLOutput;
-import java.util.*;
+import java.util.Scanner;
+
 public class factorial {
     public static void main(String[] args) {
-        Scanner inp=new Scanner(System.in);
-        int n=inp.nextInt();
-        int a=1,b=1,count=0,c,d=0;
-        while(a<=n){
-            b*=a;
-          /*  if(b%10==0){
-                count++;
-            }*/
-            a++;
-            d=b;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("ENTER THE SIZE:");
+        int size = sc.nextInt();
+
+        int fact=1;
+        int count=0;
+
+        for (int i = 1; i <=size; i++) {
+            fact=fact*i;
         }
-        while(b>0){
-            c=b%10;
-            if(c==0){
+
+        char array[]=String.valueOf(fact).toCharArray();
+
+        for (int i = 0; i < array.length; i++) {
+            if(array[i]==48){
                 count++;
             }
-            b=b/10;
         }
-        System.out.println(d+" "+count);
+        System.out.println(count);
+
+
+
     }
+    
 }
